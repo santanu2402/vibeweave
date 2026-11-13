@@ -1,0 +1,61 @@
+name: Feedback
+description: Tell us how Vibeweave went — what worked, what broke, what to improve.
+title: "Feedback: "
+labels: ["feedback"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking two minutes. The same form is on the website (https://vibeweave-glance.netlify.app/feedback/) if you'd rather send it privately by email.
+  - type: dropdown
+    id: rating
+    attributes:
+      label: How would you rate Vibeweave?
+      options: ["5 — Excellent", "4 — Very good", "3 — Good", "2 — Fair", "1 — Poor"]
+    validations:
+      required: true
+  - type: dropdown
+    id: how-often
+    attributes:
+      label: How often will you use this crew?
+      options: ["Every day", "A few times a week", "A few times a month", "Only for some projects", "Just trying it out"]
+    validations:
+      required: true
+  - type: checkboxes
+    id: ide
+    attributes:
+      label: Which IDE or agent did you use it with?
+      options:
+        - label: Claude Code
+        - label: Cursor
+        - label: GitHub Copilot
+        - label: OpenAI Codex
+        - label: Gemini CLI
+        - label: Antigravity
+        - label: Windsurf
+        - label: Kiro
+        - label: Cline
+        - label: JetBrains Junie
+        - label: OpenCode
+        - label: Other (say which below)
+  - type: textarea
+    id: went-well
+    attributes:
+      label: What went well?
+  - type: textarea
+    id: went-wrong
+    attributes:
+      label: What went wrong?
+  - type: textarea
+    id: improve
+    attributes:
+      label: What can be improved?
+  - type: textarea
+    id: suggestions
+    attributes:
+      label: Suggestions or ideas
+  - type: input
+    id: version
+    attributes:
+      label: Vibeweave version and OS (optional)
+      placeholder: "2.0.0 · Windows 11 · Node 22"

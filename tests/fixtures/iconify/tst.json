@@ -1,0 +1,12 @@
+{
+  "prefix": "tst",
+  "width": 24,
+  "height": 24,
+  "icons": {
+    "star": { "body": "<path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linejoin=\"round\" d=\"M12 2l3 7h7l-6 4 2 8-6-5-6 5 2-8-6-4h7z\"/>" },
+    "heart": { "body": "<path fill=\"currentColor\" d=\"M12 21l-8-8a5 5 0 0 1 8-6a5 5 0 0 1 8 6z\"/>" },
+    "evil": { "body": "<path d=\"M0 0h24v24H0z\" onload=\"alert(1)\"/>" },
+    "braces": { "body": "<path d=\"M4 4h16v16H4z\"/><text x=\"4\" y=\"14\">{x}</text>" }
+  },
+  "aliases": { "star-flipped": { "parent": "star", "hFlip": true } }
+}

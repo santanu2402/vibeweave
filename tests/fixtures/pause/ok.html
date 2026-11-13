@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pause fixture — pause and play both work</title>
+<link rel="icon" href="data:,">
+<style>
+  body { margin: 0; font: 16px/1.5 system-ui, sans-serif; color: #1f2937; background: #fff; }
+  main { padding: 16px; }
+  .band { overflow: hidden; }
+  .track { display: flex; gap: 2rem; width: max-content; animation: slide 20s linear infinite; }
+  @keyframes slide { to { transform: translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce) { .track { animation: none; } }
+  /* quiet: only focus inside the moving rows pauses them */
+  .track:focus-within, .band.is-paused .track { animation-play-state: paused; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Pause fixture</h1>
+  <section class="band">
+    <button class="toggle" type="button" aria-pressed="false">Pause motion</button>
+    <div class="track"><span>Claude Code</span><span>Cursor</span><span>Codex</span><span>Claude Code</span><span>Cursor</span><span>Codex</span></div>
+  </section>
+</main>
+<script>
+  const band = document.querySelector(".band"), btn = document.querySelector(".toggle");
+  btn.addEventListener("click", () => {
+    const paused = btn.getAttribute("aria-pressed") !== "true";
+    btn.setAttribute("aria-pressed", String(paused));
+    btn.textContent = paused ? "Play motion" : "Pause motion";
+    band.classList.toggle("is-paused", paused);
+  });
+</script>
+</body>
+</html>

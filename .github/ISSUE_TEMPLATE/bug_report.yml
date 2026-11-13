@@ -1,0 +1,40 @@
+name: Bug report
+description: Something in Vibeweave doesn't work as documented.
+title: "Bug: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please run `npx vibeweave doctor` first and paste its output below — it answers most setup questions.
+        Security problems: please don't open an issue; see SECURITY.md for private reporting.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened, and what did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: "1. npx vibeweave --agent cursor\n2. …"
+    validations:
+      required: true
+  - type: input
+    id: ide
+    attributes:
+      label: IDE or agent
+      placeholder: "Claude Code / Cursor / Copilot / Codex / Gemini CLI / …"
+    validations:
+      required: true
+  - type: textarea
+    id: doctor
+    attributes:
+      label: Output of `npx vibeweave doctor`
+      render: text
+  - type: textarea
+    id: logs
+    attributes:
+      label: Tool output or error message (optional)
+      render: text

@@ -1,0 +1,61 @@
+name: validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 22
+      - name: Validate skills, subagents, scripts, capability coverage, presets, system map and shared files
+        run: node tools/validate.mjs
+      - name: Smoke-test zero-dependency scripts
+        run: |
+          node skills/frontend-forge/scripts/contrast.mjs "#111827" "#ffffff"
+          node skills/frontend-forge/scripts/palette.mjs "#0e7c86" --neutral > /dev/null
+          node skills/frontend-forge/scripts/audit.mjs skills > /dev/null
+          node skills/ui-optimize/scripts/bundle.mjs skills > /dev/null
+          node skills/frontend-forge/scripts/preset.mjs check
+          node skills/frontend-forge/scripts/preset.mjs apply swiss-signal --format tailwind > /dev/null
+          node skills/frontend-forge/scripts/novelty.mjs ideas "ci smoke test" > /dev/null
+          node skills/ui-integrate/scripts/endpoints.mjs skills > /dev/null
+          echo '{"transcript_path":"/nonexistent"}' | node hooks/usage-report.mjs
+      - name: Smoke-test the mock API
+        run: |
+          node skills/ui-integrate/scripts/mock-api.mjs --port 4010 --quiet &
+          sleep 1
+          curl -sf http://127.0.0.1:4010/api/studios | grep -q "Clay Corner"
+          test "$(curl -s -o /dev/null -w '%{http_code}' -X POST -H 'content-type: application/json' -d '{}' http://127.0.0.1:4010/api/bookings)" = "422"
+      - name: Smoke-test the installer (all IDEs, then uninstall)
+        run: |
+          mkdir -p /tmp/project && cd /tmp/project
+          bash "$GITHUB_WORKSPACE/install.sh" --agent all
+          test -f .agents/skills/vibeweave/SKILL.md
+          test -f .claude/skills/ui-test/scripts/qa.mjs
+          test -f .claude/agents/qa-tester.md
+          test -f .codex/agents/qa-tester.toml
+          test -f .github/agents/qa-tester.agent.md
+          test -f .cursor/rules/vibeweave.mdc
+          test -f .kiro/steering/vibeweave.md
+          test -f .gemini/commands/vibeweave.toml
+          grep -q "vibeweave:start" AGENTS.md
+          bash "$GITHUB_WORKSPACE/install.sh" --agent all --uninstall
+          test ! -d .agents/skills/vibeweave
+          test -z "$(ls -A)"
+      - name: Install the browser-test dependencies (not saved to package.json)
+        run: npm i --no-save playwright@1.65.0 axe-core@4.14.0
+      - name: Install Chromium for Playwright
+        run: npx playwright install --with-deps chromium
+      - name: Self-test every tool against the fixtures, browser tools included
+        run: node tools/selftest.mjs --require-browser

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- planted: zoom disabled (audit zoom-disabled, axe meta-viewport) -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Kiln Notes (buggy fixture)</title>
+<link rel="icon" href="data:,">
+<style>
+  body { margin: 0; font: 16px/1.5 system-ui, sans-serif; color: #1f2937; background: #ffffff; }
+  button { font: inherit; padding: 10px 16px; }
+  header, main, footer { padding: 16px; }
+  nav a { display: inline-block; padding: 10px 12px; }
+  .faint { color: #b8b8b8; }                       /* planted: 1.98:1 contrast */
+  .promo { box-sizing: border-box; width: 520px; padding: 12px; background: #fef3c7; }   /* planted: overflows below 552px */
+  .banner { height: 260px; background: #e0f2fe; }  /* planted: inserted late without reserved space (CLS) */
+</style>
+</head>
+<body>
+<header>
+  <nav><a href="./">Home</a> <a href="about.html">About</a> <a href="missing.html">Pricing</a></nav>
+</header>
+<main>
+  <h1>Kiln Notes</h1>
+  <div id="slot"></div>
+  <p class="faint">Firing schedules for small studios, written down after every batch.</p>
+  <div class="promo">Spring workshop: book a wheel for the weekend and fire with us on Sunday.</div>
+  <p><a href="#nowhere">Jump to the schedule</a></p>
+  <p><a href="#">Read more</a></p>
+  <button type="button" class="cta">Get the guide</button>
+  <button type="button" id="toggle" aria-expanded="false">Show cone chart</button>
+  <ul id="chart" hidden><li>Cone 06: 999 C</li><li>Cone 6: 1222 C</li></ul>
+  <img src="logo.svg" width="120" height="40">
+  <img src="missing.png" alt="Studio photo" width="120" height="80">
+</main>
+<footer><p>Kiln Notes fixture. Not a real studio.</p></footer>
+<script>
+  // planted: a console error on every load
+  console.error("planted: widget failed to initialise");
+  document.getElementById("toggle").addEventListener("click", (e) => {
+    const open = e.currentTarget.getAttribute("aria-expanded") === "true";
+    e.currentTarget.setAttribute("aria-expanded", String(!open));
+    document.getElementById("chart").hidden = open;
+  });
+  addEventListener("load", () => {
+    // planted: content pushed down after load (layout shift)
+    setTimeout(() => {
+      const b = document.createElement("div");
+      b.className = "banner";
+      b.textContent = "Late banner";
+      document.getElementById("slot").append(b);
+    }, 300);
+    // planted: a 320 ms long task after first paint — scheduled from the paint entry, so it lands after FCP however
+    // slow the machine is (TBT only counts long tasks after first contentful paint)
+    new PerformanceObserver((list, obs) => {
+      if (!list.getEntriesByName("first-contentful-paint").length) return;
+      obs.disconnect();
+      setTimeout(() => { const t = performance.now(); while (performance.now() - t < 320) {} }, 300);
+    }).observe({ type: "paint", buffered: true });
+  });
+</script>
+</body>
+</html>

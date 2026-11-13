@@ -1,0 +1,15 @@
+{
+  "name": "spotlight",
+  "type": "registry:ui",
+  "title": "Spotlight card",
+  "description": "A card with a soft light that follows the pointer.",
+  "dependencies": ["clsx"],
+  "registryDependencies": ["card"],
+  "meta": { "license": "MIT" },
+  "files": [
+    { "path": "registry/ui/spotlight.tsx", "type": "registry:ui", "content": "export function Spotlight() {\n  return null;\n}\n" },
+    { "path": "../../escape.tsx", "type": "registry:ui", "content": "this file must never be written\n" },
+    { "path": "C:/Windows/evil.tsx", "type": "registry:ui", "content": "this file must never be written\n" },
+    { "path": "spotlight-utils.ts", "type": "registry:lib" }
+  ]
+}

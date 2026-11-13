@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Private feedback form
+    url: https://vibeweave-glance.netlify.app/feedback/
+    about: The same questions as the Feedback issue, emailed to the maker instead of posted publicly.
+  - name: Report a security vulnerability
+    url: https://github.com/santanu2402/vibeweave/security/advisories/new
+    about: Please report security problems privately — see SECURITY.md.
+  - name: User manual
+    url: https://vibeweave-glance.netlify.app/docs/
+    about: Installation, workflow, tools, troubleshooting and FAQ.

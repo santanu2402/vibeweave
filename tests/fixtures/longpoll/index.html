@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Long-poll fixture</title><link rel="icon" href="data:,">
+<style>body { font: 16px/1.5 system-ui, sans-serif; } button { font: inherit; min-height: 44px; padding: 0 16px; }</style></head>
+<body><main><h1>Long-poll fixture</h1><p>The page loads at once, then keeps one request open, so the network never goes idle.</p>
+<button type="button" id="more" aria-expanded="false">Show more</button><p id="extra" hidden>More text.</p></main>
+<script>
+  addEventListener("load", () => { fetch("/__slow?ms=30000").catch(() => {}); });
+  document.getElementById("more").addEventListener("click", (e) => {
+    const open = e.currentTarget.getAttribute("aria-expanded") === "true";
+    e.currentTarget.setAttribute("aria-expanded", String(!open));
+    document.getElementById("extra").hidden = open;
+  });
+</script>
+</body>
+</html>

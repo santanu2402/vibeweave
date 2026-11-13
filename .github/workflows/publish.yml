@@ -1,0 +1,32 @@
+name: publish
+
+# Publishes to npm when you publish a GitHub release (e.g. tag v2.0.1).
+# Uses npm trusted publishing (OIDC): no npm token is stored in GitHub, and npm adds a provenance badge.
+# One-time setup on npmjs.com: package vibeweave → Settings → Trusted Publisher → GitHub Actions →
+#   your GitHub user/org, repository "vibeweave", workflow file "publish.yml".
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+  id-token: write # required for trusted publishing + provenance
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24 # ships npm 11, which supports trusted publishing
+          registry-url: https://registry.npmjs.org
+      - name: Validate skills, subagents, scripts, capability coverage and presets
+        run: node tools/validate.mjs
+      - name: Self-test the tools (offline tests; the browser tests run in validate.yml on every push)
+        run: node tools/selftest.mjs
+      - name: Release tag must match package.json version
+        run: test "${GITHUB_REF_NAME#v}" = "$(node -p "require('./package.json').version")"
+      - run: npm publish --access public

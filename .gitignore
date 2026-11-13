@@ -1,0 +1,13 @@
+node_modules/
+.claude/settings.local.json
+.design-review/
+*-workspace/
+.DS_Store
+Thumbs.db
+*.log
+.vibeweave/
+.env
+.env.*
+*.pem
+*.key
+*.tgz

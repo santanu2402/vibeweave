@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Forced layout fixture</title>
+<link rel="icon" href="data:,">
+<style>body { margin: 0; font: 16px/1.5 system-ui, sans-serif; color: #1f2937; background: #fff; } main { padding: 16px; } .box { width: 50%; }</style>
+</head>
+<body>
+<main><h1>Forced layout fixture</h1><div id="list"></div><div class="box" id="box">Box</div></main>
+<script>
+  // planted: a startup script that writes and then reads layout in a loop before the first paint
+  const list = document.getElementById("list");
+  for (let i = 0; i < 1500; i++) { const p = document.createElement("p"); p.textContent = "Paragraph " + i + " with enough words to wrap onto more than one line on a phone."; list.append(p); }
+  const box = document.getElementById("box");
+  for (let i = 0; i < 40; i++) { box.style.width = (40 + i) + "%"; void document.documentElement.scrollHeight; }
+</script>
+</body>
+</html>

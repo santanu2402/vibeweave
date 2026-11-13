@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kiln Notes</title>
+<meta name="description" content="Firing schedules and glaze notes for small pottery studios.">
+<meta property="og:image" content="logo.svg">
+<link rel="icon" href="data:,">
+<style>
+  :root { --color-bg: #ffffff; --color-text: #1f2937; --color-muted: #4b5563; --color-surface: #f8fafc; --color-accent: #0f5f68; --radius-md: 8px; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 16px/1.6 system-ui, sans-serif; color: var(--color-text); background: var(--color-bg); }
+  header, main, footer { max-width: 40rem; margin: 0 auto; padding: 16px; }
+  nav { display: flex; gap: 8px; }
+  nav a { display: inline-flex; align-items: center; min-height: 44px; min-width: 44px; padding: 0 12px; color: var(--color-accent); }
+  a { color: var(--color-accent); }
+  :focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; }
+  .card { background: var(--color-surface); color: var(--color-muted); padding: 16px; border-radius: var(--radius-md); }
+  button { font: inherit; min-height: 44px; padding: 0 16px; border: 0; border-radius: var(--radius-md); background: var(--color-accent); color: #ffffff; cursor: pointer; }
+  img { display: block; max-width: 100%; height: auto; }
+</style>
+</head>
+<body>
+<header>
+  <nav aria-label="Main"><a href="./" aria-current="page">Home</a><a href="about.html">About</a></nav>
+</header>
+<main>
+  <img src="logo.svg" alt="Kiln Notes" width="160" height="48">
+  <h1>Kiln Notes</h1>
+  <p>Firing schedules for small studios, written down after every batch. Jump to the <a href="#schedule">schedule</a>.</p>
+  <div class="card"><p>Every entry lists the clay body, the cone, the ramp and what came out of the kiln.</p></div>
+  <h2 id="schedule">Schedule</h2>
+  <button type="button" id="toggle" aria-expanded="false" aria-controls="chart">Show cone chart</button>
+  <ul id="chart" hidden><li>Cone 06: 999 C</li><li>Cone 6: 1222 C</li></ul>
+  <!-- Working buttons a fixed-sleep click test would call dead: a delayed update, an alert, a class on the root element. -->
+  <p class="actions"><button type="button" id="save">Save draft</button> <button type="button" id="help">Firing tips</button> <button type="button" id="theme">Dim theme</button></p>
+  <p id="status" role="status"></p>
+</main>
+<footer><p>Kiln Notes fixture. Read <a href="about.html">about the studio</a>.</p></footer>
+<script>
+  document.getElementById("toggle").addEventListener("click", (e) => {
+    const open = e.currentTarget.getAttribute("aria-expanded") === "true";
+    e.currentTarget.setAttribute("aria-expanded", String(!open));
+    document.getElementById("chart").hidden = open;
+  });
+  document.getElementById("save").addEventListener("click", () => {
+    setTimeout(() => { document.getElementById("status").textContent = "Draft saved."; }, 1200);
+  });
+  document.getElementById("help").addEventListener("click", () => alert("Ramp slowly through quartz inversion."));
+  document.getElementById("theme").addEventListener("click", () => document.documentElement.classList.toggle("theme-dim"));
+</script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+{
+  "icons": ["tst:star", "tst:star-flipped"],
+  "total": 2,
+  "limit": 48,
+  "start": 0,
+  "collections": { "tst": { "name": "Fixture Line", "total": 4, "license": { "title": "MIT", "spdx": "MIT" } } }
+}

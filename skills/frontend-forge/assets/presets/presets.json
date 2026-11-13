@@ -1,0 +1,1759 @@
+{
+  "version": 1,
+  "note": "Vibeweave design presets — REFERENCE POINTS, not templates. They show the obvious, verified answer for a style so agents can design away from it (or prototype fast when the user explicitly asks). Never ship one unchanged unless the user picked it by name; run novelty.mjs check on the final tokens. Colors are OKLCH; every text, muted, on-accent and UI pair is verified for WCAG 2.2 AA by `preset.mjs check`. Fonts are Fontsource ids.",
+  "motion": {
+    "calm": {
+      "fast": 160,
+      "base": 260,
+      "slow": 420,
+      "ease": "cubic-bezier(.22,1,.36,1)",
+      "spring": {
+        "k": 170,
+        "c": 26
+      },
+      "stagger": 60,
+      "distance": "12px",
+      "use": "trust, wellness, editorial, enterprise"
+    },
+    "snappy": {
+      "fast": 120,
+      "base": 200,
+      "slow": 320,
+      "ease": "cubic-bezier(.16,1,.3,1)",
+      "spring": {
+        "k": 320,
+        "c": 32
+      },
+      "stagger": 40,
+      "distance": "8px",
+      "use": "SaaS, dev tools, dashboards, e-commerce"
+    },
+    "playful": {
+      "fast": 140,
+      "base": 240,
+      "slow": 400,
+      "ease": "cubic-bezier(.34,1.56,.64,1)",
+      "spring": {
+        "k": 260,
+        "c": 14
+      },
+      "stagger": 50,
+      "distance": "16px",
+      "use": "kids, consumer, community, games"
+    },
+    "luxury": {
+      "fast": 220,
+      "base": 420,
+      "slow": 760,
+      "ease": "cubic-bezier(.65,0,.35,1)",
+      "spring": {
+        "k": 120,
+        "c": 22
+      },
+      "stagger": 90,
+      "distance": "20px",
+      "use": "fashion, hotels, jewelry, real estate"
+    },
+    "cinematic": {
+      "fast": 200,
+      "base": 600,
+      "slow": 1000,
+      "ease": "cubic-bezier(.16,1,.3,1)",
+      "spring": {
+        "k": 90,
+        "c": 18
+      },
+      "stagger": 80,
+      "distance": "32px",
+      "use": "launches, agencies, portfolios, campaigns"
+    },
+    "technical": {
+      "fast": 100,
+      "base": 160,
+      "slow": 240,
+      "ease": "cubic-bezier(.2,0,0,1)",
+      "spring": {
+        "k": 400,
+        "c": 40
+      },
+      "stagger": 30,
+      "distance": "4px",
+      "use": "terminals, data-dense tools, docs"
+    }
+  },
+  "presets": [
+    {
+      "id": "swiss-signal",
+      "name": "Swiss Signal",
+      "style": "Swiss / Minimalism",
+      "mood": [
+        "precise",
+        "confident",
+        "quiet"
+      ],
+      "bestFor": [
+        "saas",
+        "agency",
+        "architecture",
+        "b2b",
+        "portfolio",
+        "docs"
+      ],
+      "dials": {
+        "variance": 5,
+        "motion": 3,
+        "density": 4
+      },
+      "fonts": {
+        "display": {
+          "id": "schibsted-grotesk",
+          "family": "Schibsted Grotesk",
+          "variable": true
+        },
+        "body": {
+          "id": "hanken-grotesk",
+          "family": "Hanken Grotesk",
+          "variable": true
+        }
+      },
+      "radius": {
+        "sm": "2px",
+        "md": "4px",
+        "lg": "6px"
+      },
+      "shadow": "none",
+      "motion": "snappy",
+      "light": {
+        "bg": "oklch(0.985 0.002 90)",
+        "surface": "oklch(0.955 0.003 90)",
+        "text": "oklch(0.18 0.005 90)",
+        "muted": "oklch(0.47 0.01 90)",
+        "border": "oklch(0.88 0.005 90)",
+        "accent": "oklch(0.55 0.21 28)",
+        "onAccent": "oklch(0.99 0 0)"
+      },
+      "dark": {
+        "bg": "oklch(0.15 0.004 90)",
+        "surface": "oklch(0.2 0.005 90)",
+        "text": "oklch(0.96 0.004 90)",
+        "muted": "oklch(0.72 0.01 90)",
+        "border": "oklch(0.32 0.006 90)",
+        "accent": "oklch(0.68 0.19 30)",
+        "onAccent": "oklch(0.15 0.004 90)"
+      },
+      "patterns": [
+        "scroll-reveal",
+        "scroll-progress",
+        "bento-grid"
+      ],
+      "avoid": "centering everything; grey-on-grey text; more than one accent"
+    },
+    {
+      "id": "editorial-ink",
+      "name": "Editorial Ink",
+      "style": "Editorial / Magazine",
+      "mood": [
+        "literate",
+        "warm",
+        "authoritative"
+      ],
+      "bestFor": [
+        "blog",
+        "magazine",
+        "publishing",
+        "culture",
+        "nonprofit",
+        "annual-report"
+      ],
+      "dials": {
+        "variance": 7,
+        "motion": 3,
+        "density": 5
+      },
+      "fonts": {
+        "display": {
+          "id": "instrument-serif",
+          "family": "Instrument Serif",
+          "variable": false
+        },
+        "body": {
+          "id": "source-serif-4",
+          "family": "Source Serif 4",
+          "variable": true
+        }
+      },
+      "radius": {
+        "sm": "0px",
+        "md": "2px",
+        "lg": "4px"
+      },
+      "shadow": "none",
+      "motion": "calm",
+      "light": {
+        "bg": "oklch(0.975 0.008 85)",
+        "surface": "oklch(0.945 0.01 85)",
+        "text": "oklch(0.2 0.02 260)",
+        "muted": "oklch(0.46 0.02 260)",
+        "border": "oklch(0.86 0.012 85)",
+        "accent": "oklch(0.42 0.12 255)",
+        "onAccent": "oklch(0.98 0.005 85)"
+      },
+      "dark": {
+        "bg": "oklch(0.17 0.015 260)",
+        "surface": "oklch(0.22 0.018 260)",
+        "text": "oklch(0.94 0.01 85)",
+        "muted": "oklch(0.72 0.015 85)",
+        "border": "oklch(0.33 0.02 260)",
+        "accent": "oklch(0.74 0.1 250)",
+        "onAccent": "oklch(0.17 0.015 260)"
+      },
+      "patterns": [
+        "scroll-reveal",
+        "scroll-progress"
+      ],
+      "avoid": "newspaper pastiche without real content; thin serif at small sizes"
+    },
+    {
+      "id": "neo-brutal-pop",
+      "name": "Neo-Brutal Pop",
+      "style": "Neo-Brutalism",
+      "mood": [
+        "bold",
+        "friendly",
+        "loud"
+      ],
+      "bestFor": [
+        "creator-tools",
+        "indie-saas",
+        "education",
+        "community",
+        "hackathon",
+        "newsletter"
+      ],
+      "dials": {
+        "variance": 7,
+        "motion": 5,
+        "density": 5
+      },
+      "fonts": {
+        "display": {
+          "id": "archivo-black",
+          "family": "Archivo Black",
+          "variable": false
+        },
+        "body": {
+          "id": "space-grotesk",
+          "family": "Space Grotesk",
+          "variable": true
+        }
+      },
+      "radius": {
+        "sm": "6px",
+        "md": "10px",
+        "lg": "14px"
+      },
+      "shadow": "hard",
+      "motion": "playful",
+      "light": {
+        "bg": "oklch(0.97 0.03 95)",
+        "surface": "oklch(0.99 0.01 95)",
+        "text": "oklch(0.17 0 0)",
+        "muted": "oklch(0.4 0.01 0)",
+        "border": "oklch(0.17 0 0)",
+        "accent": "oklch(0.86 0.17 95)",
+        "onAccent": "oklch(0.17 0 0)",
+        "focus": "oklch(0.52 0.2 265)",
+        "accent2": "oklch(0.72 0.16 350)"
+      },
+      "dark": {
+        "bg": "oklch(0.16 0.01 270)",
+        "surface": "oklch(0.22 0.012 270)",
+        "text": "oklch(0.97 0.01 95)",
+        "muted": "oklch(0.78 0.01 95)",
+        "border": "oklch(0.97 0.01 95)",
+        "accent": "oklch(0.86 0.17 95)",
+        "onAccent": "oklch(0.17 0 0)",
+        "focus": "oklch(0.75 0.14 250)"
+      },
+      "patterns": [
+        "marquee",
+        "magnetic-button",
+        "number-ticker"
+      ],
+      "avoid": "every element shouting; more than 3 fills; body text on bright fills"
+    },
+    {
+      "id": "raw-brutal",
+      "name": "Raw Brutal",
+      "style": "Brutalism (raw)",
+      "mood": [
+        "honest",
+        "stark",
+        "unpolished"
+      ],
+      "bestFor": [
+        "artist",
+        "zine",
+        "music",
+        "experimental",
+        "studio"
+      ],
+      "dials": {
+        "variance": 9,
+        "motion": 2,
+        "density": 6
+      },
+      "fonts": {
+        "display": {
+          "id": "space-mono",
+          "family": "Space Mono",
+          "variable": false
+        },
+        "body": {
+          "id": "ibm-plex-mono",
+          "family": "IBM Plex Mono",
+          "variable": false
+        }
+      },
+      "radius": {
+        "sm": "0px",
+        "md": "0px",
+        "lg": "0px"
+      },
+      "shadow": "none",
+      "motion": "technical",
+      "light": {
+        "bg": "oklch(1 0 0)",
+        "surface": "oklch(0.96 0 0)",
+        "text": "oklch(0 0 0)",
+        "muted": "oklch(0.4 0 0)",
+        "border": "oklch(0 0 0)",
+        "accent": "oklch(0.45 0.3 264)",
+        "onAccent": "oklch(1 0 0)"
+      },
+      "dark": {
+        "bg": "oklch(0 0 0)",
+        "surface": "oklch(0.18 0 0)",
+        "text": "oklch(1 0 0)",
+        "muted": "oklch(0.75 0 0)",
+        "border": "oklch(1 0 0)",
+        "accent": "oklch(0.8 0.15 200)",
+        "onAccent": "oklch(0 0 0)"
+      },
+      "patterns": [
+        "custom-cursor"
+      ],
+      "avoid": "looking unfinished — control the type scale and the grid tension"
+    },
+    {
+      "id": "glass-aurora",
+      "name": "Glass Aurora",
+      "style": "Glassmorphism + Aurora",
+      "mood": [
+        "luminous",
+        "optimistic",
+        "fluid"
+      ],
+      "bestFor": [
+        "ai-product",
+        "consumer-app",
+        "music",
+        "wellness-app",
+        "event"
+      ],
+      "dials": {
+        "variance": 6,
+        "motion": 6,
+        "density": 3
+      },
+      "fonts": {
+        "display": {
+          "id": "sora",
+          "family": "Sora",
+          "variable": true
+        },
+        "body": {
+          "id": "manrope",
+          "family": "Manrope",
+          "variable": true
+        }
+      },
+      "radius": {
+        "sm": "10px",
+        "md": "16px",
+        "lg": "24px"
+      },
+      "shadow": "soft",
+      "motion": "calm",
+      "light": {
+        "bg": "oklch(0.97 0.015 200)",
+        "surface": "oklch(0.99 0.01 200)",
+        "text": "oklch(0.22 0.03 230)",
+        "muted": "oklch(0.47 0.03 230)",
+        "border": "oklch(0.86 0.02 210)",
+        "accent": "oklch(0.5 0.12 195)",
+        "onAccent": "oklch(0.99 0 0)",
+        "accent2": "oklch(0.7 0.15 25)"
+      },
+      "dark": {
+        "bg": "oklch(0.17 0.03 240)",
+        "surface": "oklch(0.24 0.035 240)",
+        "text": "oklch(0.95 0.01 220)",
+        "muted": "oklch(0.74 0.03 220)",
+        "border": "oklch(0.36 0.04 240)",
+        "accent": "oklch(0.78 0.12 190)",
+        "onAccent": "oklch(0.17 0.03 240)"
+      },
+      "patterns": [
+        "aurora-background",
+        "glass-nav",
+        "spotlight-card"
+      ],
+      "avoid": "glass with nothing behind it; the default purple-pink-blue blend"
+    },
+    {
+      "id": "liquid-glass",
+      "name": "Liquid Glass",
+      "style": "Liquid Glass",
+      "mood": [
+        "premium",
+        "native",
+        "fluid"
+      ],
+      "bestFor": [
+        "app-landing",
+        "consumer-app",
+        "hardware",
+        "media",
+        "productivity"
+      ],
+      "dials": {
+        "variance": 4,
+        "motion": 5,
+        "density": 4
+      },
+      "fonts": {
+        "display": {
+          "id": "plus-jakarta-sans",
+          "family": "Plus Jakarta Sans",
+          "variable": true
+        },
+        "body": {
+          "id": "plus-jakarta-sans",
+          "family": "Plus Jakarta Sans",
+          "variable": true
+        }
+      },
+      "radius": {
+        "sm": "12px",
+        "md": "20px",
+        "lg": "32px"
+      },
+      "shadow": "soft",
+      "motion": "snappy",
+      "light": {
+        "bg": "oklch(0.965 0.005 250)",
+        "surface": "oklch(0.995 0.002 250)",
+        "text": "oklch(0.2 0.01 250)",
+        "muted": "oklch(0.48 0.015 250)",
+        "border": "oklch(0.87 0.008 250)",
+        "accent": "oklch(0.55 0.2 255)",
+        "onAccent": "oklch(0.99 0 0)"
+      },
+      "dark": {
+        "bg": "oklch(0.13 0.005 250)",
+        "surface": "oklch(0.2 0.008 250)",
+        "text": "oklch(0.97 0.003 250)",
+        "muted": "oklch(0.73 0.01 250)",
+        "border": "oklch(0.3 0.01 250)",
+        "accent": "oklch(0.72 0.16 252)",
+        "onAccent": "oklch(0.13 0.005 250)"
+      },
+      "patterns": [
+        "glass-nav",
+        "lighting",
+        "animated-tabs"
+      ],
+      "avoid": "glass on everything; labels over bright content without a tint"
+    },
+    {
+      "id": "soft-neumorph",
+      "name": "Soft Neumorph",
+      "style": "Neumorphism (Soft UI)",
+      "mood": [
+        "soft",
+        "tactile",
+        "calm"
+      ],
+      "bestFor": [
+        "smart-home",
+        "audio-controls",
+        "widget",
+        "calculator",
+        "dashboard-widget"
+      ],
+      "dials": {
+        "variance": 3,
+        "motion": 4,
+        "density": 3
+      },
+      "fonts": {
+        "display": {
+          "id": "manrope",
+          "family": "Manrope",
+          "variable": true
+        },
+        "body": {
+          "id": "manrope",
+          "family": "Manrope",
+          "variable": true
+        }
+      },
+      "radius": {
+        "sm": "12px",
+        "md": "18px",
+        "lg": "28px"
+      },
+      "shadow": "neu",
+      "motion": "calm",
+      "light": {
+        "bg": "oklch(0.92 0.008 255)",
+        "surface": "oklch(0.92 0.008 255)",
+        "text": "oklch(0.26 0.02 255)",
+        "muted": "oklch(0.44 0.02 255)",
+        "border": "oklch(0.82 0.01 255)",
+        "accent": "oklch(0.48 0.1 190)",
+        "onAccent": "oklch(0.99 0 0)"
+      },
+      "dark": {
+        "bg": "oklch(0.25 0.01 255)",
+        "surface": "oklch(0.25 0.01 255)",
+        "text": "oklch(0.94 0.005 255)",
+        "muted": "oklch(0.76 0.01 255)",
+        "border": "oklch(0.34 0.012 255)",
+        "accent": "oklch(0.78 0.1 190)",
+        "onAccent": "oklch(0.2 0.01 255)"
+      },
+      "patterns": [
+        "tilt-card",
+        "realistic-shadows"
+      ],
+      "avoid": "dense forms; low-contrast labels; state shown by shadow alone"
+    },
+    {
+      "id": "clay-play",
+      "name": "Clay Play",
+      "style": "Claymorphism",
+      "mood": [
+        "squishy",
+        "joyful",
+        "safe"
+      ],
+      "bestFor": [
+        "kids",
+        "education",
+        "onboarding",
+        "fintech-youth",
+        "community"
+      ],
+      "dials": {
+        "variance": 6,
+        "motion": 6,
+        "density": 3
+      },
+      "fonts": {
+        "display": {
+          "id": "fredoka",
+          "family": "Fredoka",
+          "variable": true
+        },
+        "body": {
+          "id": "nunito",
+          "family": "Nunito",
+          "variable": true
+        }
+      },
+      "radius": {
+        "sm": "14px",
+        "md": "24px",
+        "lg": "36px"
+      },
+      "shadow": "clay",
+      "motion": "playful",
+      "light": {
+        "bg": "oklch(0.96 0.02 60)",
+        "surface": "oklch(0.99 0.012 60)",
+        "text": "oklch(0.25 0.03 280)",
+        "muted": "oklch(0.46 0.03 280)",
+        "border": "oklch(0.88 0.02 60)",
+        "accent": "oklch(0.55 0.18 340)",
+        "onAccent": "oklch(0.99 0 0)",
+        "accent2": "oklch(0.75 0.13 160)"
+      },
+      "dark": {
+        "bg": "oklch(0.2 0.03 290)",
+        "surface": "oklch(0.27 0.035 290)",
+        "text": "oklch(0.96 0.01 60)",
+        "muted": "oklch(0.76 0.02 60)",
+        "border": "oklch(0.38 0.03 290)",
+        "accent": "oklch(0.76 0.14 345)",
+        "onAccent": "oklch(0.2 0.03 290)"
+      },
+      "patterns": [
+        "magnetic-button",
+        "number-ticker",
+        "toast"
+      ],
+      "avoid": "pastel text; making serious content feel childish"
+    },
+    {
+      "id": "tactile-skeuo",
+      "name": "Tactile Skeuo",
+      "style": "Skeuomorphism (modern tactile)",
+      "mood": [
+        "physical",
+        "crafted",
+        "precise"
+      ],
+      "bestFor": [
+        "audio-tool",
+        "creative-tool",
+        "hardware",
+        "camera-app",
+        "synth"
+      ],
+      "dials": {
+        "variance": 5,
+        "motion": 5,
+        "density": 6
+      },
+      "fonts": {
+        "display": {
+          "id": "ibm-plex-sans",
+          "family": "IBM Plex Sans",
+          "variable": true
+        },
+        "body": {
+          "id": "ibm-plex-sans",
+          "family": "IBM Plex Sans",
+          "variable": true
+        },
+        "mono": {
+          "id": "ibm-plex-mono",
+          "family": "IBM Plex Mono",
+          "variable": false
+        }
+      },
+      "radius": {
+        "sm": "6px",
+        "md": "10px",
+        "lg": "16px"
+      },
+      "shadow": "soft",
+      "motion": "snappy",
+      "light": {
+        "bg": "oklch(0.93 0.005 80)",
+        "surface": "oklch(0.97 0.004 80)",
+        "text": "oklch(0.2 0.01 60)",
+        "muted": "oklch(0.44 0.01 60)",
+        "border": "oklch(0.8 0.008 80)",
+        "accent": "oklch(0.62 0.17 45)",
+        "onAccent": "oklch(0.15 0.006 60)"
+      },
+      "dark": {
+        "bg": "oklch(0.18 0.006 60)",
+        "surface": "oklch(0.24 0.008 60)",
+        "text": "oklch(0.94 0.005 80)",
+        "muted": "oklch(0.72 0.008 80)",
+        "border": "oklch(0.34 0.008 60)",
+        "accent": "oklch(0.74 0.15 55)",
+        "onAccent": "oklch(0.15 0.006 60)"
+      },
+      "patterns": [
+        "lighting",
+        "realistic-shadows",
+        "tilt-card"
+      ],
+      "avoid": "2010 kitsch (leather, wood grain); mixed light directions"
+    },
+    {
+      "id": "maximal-riot",
+      "name": "Maximal Riot",
+      "style": "Maximalism",
+      "mood": [
+        "loud",
+        "layered",
+        "fearless"
+      ],
+      "bestFor": [
+        "fashion",
+        "music",
+        "festival",
+        "creative-agency",
+        "campaign",
+        "youth-brand"
+      ],
+      "dials": {
+        "variance": 9,
+        "motion": 7,
+        "density": 6
+      },
+      "fonts": {
+        "display": {
+          "id": "bricolage-grotesque",
+          "family": "Bricolage Grotesque",
+          "variable": true
+        },
+        "body": {
+          "id": "dm-sans",
+          "family": "DM Sans",
+          "variable": true
+        }
+      },
+      "radius": {
+        "sm": "4px",
+        "md": "12px",
+        "lg": "28px"
+      },
+      "shadow": "hard",
+      "motion": "cinematic",
+      "light": {
+        "bg": "oklch(0.97 0.02 340)",
+        "surface": "oklch(0.99 0.01 340)",
+        "text": "oklch(0.18 0.03 300)",
+        "muted": "oklch(0.42 0.04 300)",
+        "border": "oklch(0.18 0.03 300)",
+        "accent": "oklch(0.55 0.25 350)",
+        "onAccent": "oklch(0.99 0 0)",
+        "accent2": "oklch(0.85 0.18 110)"
+      },
+      "dark": {
+        "bg": "oklch(0.14 0.04 300)",
+        "surface": "oklch(0.21 0.05 300)",
+        "text": "oklch(0.97 0.02 340)",
+        "muted": "oklch(0.78 0.03 340)",
+        "border": "oklch(0.97 0.02 340)",
+        "accent": "oklch(0.74 0.19 350)",
+        "onAccent": "oklch(0.14 0.04 300)"
+      },
+      "patterns": [
+        "marquee",
+        "custom-cursor",
+        "scroll-video"
+      ],
+      "avoid": "chaos without one obvious first read and one obvious action"
+    },
+    {
+      "id": "bento-clean",
+      "name": "Bento Clean",
+      "style": "Bento Grid",
+      "mood": [
+        "organized",
+        "modern",
+        "product-first"
+      ],
+      "bestFor": [
+        "product-launch",
+        "saas",
+        "portfolio",
+        "about-me",
+        "app-landing"
+      ],
+      "dials": {
+        "variance": 5,
+        "motion": 5,
+        "density": 5
+      },
+      "fonts": {
+        "display": {
+          "id": "onest",
+          "family": "Onest",
+          "variable": true
+        },
+        "body": {
+          "id": "onest",
+          "family": "Onest",
+          "variable": true
+        }
+      },
+      "radius": {
+        "sm": "10px",
+        "md": "16px",
+        "lg": "24px"
+      },
+      "shadow": "soft",
+      "motion": "snappy",
+      "light": {
+        "bg": "oklch(0.975 0.004 240)",
+        "surface": "oklch(1 0 0)",
+        "text": "oklch(0.2 0.015 260)",
+        "muted": "oklch(0.47 0.015 260)",
+        "border": "oklch(0.9 0.006 250)",
+        "accent": "oklch(0.53 0.17 150)",
+        "onAccent": "oklch(0.99 0 0)"
+      },
+      "dark": {
+        "bg": "oklch(0.14 0.008 260)",
+        "surface": "oklch(0.2 0.01 260)",
+        "text": "oklch(0.96 0.005 260)",
+        "muted": "oklch(0.72 0.012 260)",
+        "border": "oklch(0.29 0.012 260)",
+        "accent": "oklch(0.74 0.15 152)",
+        "onAccent": "oklch(0.14 0.008 260)"
+      },
+      "patterns": [
+        "bento-grid",
+        "spotlight-card",
+        "number-ticker"
+      ],
+      "avoid": "twelve identical tiles (that's a card grid)"
+    },
+    {
+      "id": "spatial-depth",
+      "name": "Spatial Depth",
+      "style": "Spatial UI",
+      "mood": [
+        "immersive",
+        "futuristic",
+        "airy"
+      ],
+      "bestFor": [
+        "xr",
+        "hardware-launch",
+        "3d-product",
+        "automotive",
+        "tech-launch"
+      ],
+      "dials": {
+        "variance": 7,
+        "motion": 7,
+        "density": 3
+      },
+      "fonts": {
+        "display": {
+          "id": "sora",
+          "family": "Sora",
+          "variable": true
+        },
+        "body": {
+          "id": "figtree",
+          "family": "Figtree",
+          "variable": true
+        }
+      },
+      "radius": {
+        "sm": "14px",
+        "md": "24px",
+        "lg": "36px"
+      },
+      "shadow": "soft",
+      "motion": "cinematic",
+      "light": {
+        "bg": "oklch(0.95 0.01 230)",
+        "surface": "oklch(0.99 0.005 230)",
+        "text": "oklch(0.22 0.02 240)",
+        "muted": "oklch(0.47 0.02 240)",
+        "border": "oklch(0.86 0.012 230)",
+        "accent": "oklch(0.52 0.15 230)",
+        "onAccent": "oklch(0.99 0 0)"
+      },
+      "dark": {
+        "bg": "oklch(0.12 0.02 250)",
+        "surface": "oklch(0.2 0.025 250)",
+        "text": "oklch(0.96 0.008 230)",
+        "muted": "oklch(0.74 0.02 230)",
+        "border": "oklch(0.32 0.03 250)",
+        "accent": "oklch(0.76 0.12 220)",
+        "onAccent": "oklch(0.12 0.02 250)"
+      },
+      "patterns": [
+        "tilt-card",
+        "lighting",
+        "scroll-video"
+      ],
+      "avoid": "tilt over 8°; pointer-only interactions"
+    },
+    {
+      "id": "dark-premium",
+      "name": "Dark Premium",
+      "style": "Dark Premium (dev-tool / SaaS)",
+      "mood": [
+        "technical",
+        "sleek",
+        "serious"
+      ],
+      "bestFor": [
+        "dev-tools",
+        "api",
+        "infra",
+        "ai-product",
+        "fintech-pro",
+        "security"
+      ],
+      "dials": {
+        "variance": 5,
+        "motion": 5,
+        "density": 6
+      },
+      "fonts": {
+        "display": {
+          "id": "geist",
+          "family": "Geist",
+          "variable": true
+        },
+        "body": {
+          "id": "geist",
+          "family": "Geist",
+          "variable": true
+        },
+        "mono": {
+          "id": "geist-mono",
+          "family": "Geist Mono",
+          "variable": true
+        }
+      },
+      "radius": {
+        "sm": "6px",
+        "md": "10px",
+        "lg": "14px"
+      },
+      "shadow": "glow",
+      "motion": "snappy",
+      "light": {
+        "bg": "oklch(0.985 0.003 265)",
+        "surface": "oklch(0.96 0.005 265)",
+        "text": "oklch(0.2 0.02 265)",
+        "muted": "oklch(0.48 0.02 265)",
+        "border": "oklch(0.89 0.008 265)",
+        "accent": "oklch(0.5 0.13 215)",
+        "onAccent": "oklch(0.99 0 0)"
+      },
+      "dark": {
+        "bg": "oklch(0.15 0.012 265)",
+        "surface": "oklch(0.19 0.012 265)",
+        "text": "oklch(0.96 0.005 265)",
+        "muted": "oklch(0.7 0.015 265)",
+        "border": "oklch(0.28 0.014 265)",
+        "accent": "oklch(0.78 0.14 200)",
+        "onAccent": "oklch(0.15 0.012 265)"
+      },
+      "patterns": [
+        "border-beam",
+        "spotlight-card",
+        "glass-nav",
+        "scroll-reveal"
+      ],
+      "avoid": "pure #000; the single acid-green accent cliché; no live product demo"
+    },
+    {
+      "id": "retro-y2k",
+      "name": "Retro Y2K",
+      "style": "Retro / Y2K / Pixel",
+      "mood": [
+        "nostalgic",
+        "fun",
+        "quirky"
+      ],
+      "bestFor": [
+        "game",
+        "indie-product",
+        "music",
+        "event",
+        "dev-toy"
+      ],
+      "dials": {
+        "variance": 7,
+        "motion": 5,
+        "density": 5
+      },
+      "fonts": {
+        "display": {
+          "id": "press-start-2p",
+          "family": "Press Start 2P",
+          "variable": false
+        },
+        "body": {
+          "id": "space-grotesk",
+          "family": "Space Grotesk",
+          "variable": true
+        },
+        "mono": {
+          "id": "vt323",
+          "family": "VT323",
+          "variable": false
+        }
+      },
+      "radius": {
+        "sm": "0px",
+        "md": "0px",
+        "lg": "2px"
+      },
+      "shadow": "hard",
+      "motion": "playful",
+      "light": {
+        "bg": "oklch(0.86 0.003 250)",
+        "surface": "oklch(0.95 0.002 250)",
+        "text": "oklch(0.1 0 0)",
+        "muted": "oklch(0.33 0.01 250)",
+        "border": "oklch(0.4 0.01 250)",
+        "accent": "oklch(0.42 0.2 265)",
+        "onAccent": "oklch(0.99 0 0)"
+      },
+      "dark": {
+        "bg": "oklch(0.16 0.03 290)",
+        "surface": "oklch(0.22 0.04 290)",
+        "text": "oklch(0.93 0.04 145)",
+        "muted": "oklch(0.78 0.06 145)",
+        "border": "oklch(0.42 0.05 290)",
+        "accent": "oklch(0.8 0.18 145)",
+        "onAccent": "oklch(0.16 0.03 290)"
+      },
+      "patterns": [
+        "custom-cursor",
+        "typewriter",
+        "marquee"
+      ],
+      "avoid": "pixel fonts for body text"
+    },
+    {
+      "id": "terminal-hacker",
+      "name": "Terminal",
+      "style": "Terminal / Hacker",
+      "mood": [
+        "technical",
+        "keyboard-first",
+        "nerdy"
+      ],
+      "bestFor": [
+        "cli",
+        "dev-tools",
+        "security",
+        "api",
+        "personal-dev-site"
+      ],
+      "dials": {
+        "variance": 4,
+        "motion": 2,
+        "density": 7
+      },
+      "fonts": {
+        "display": {
+          "id": "jetbrains-mono",
+          "family": "JetBrains Mono",
+          "variable": true
+        },
+        "body": {
+          "id": "ibm-plex-sans",
+          "family": "IBM Plex Sans",
+          "variable": true
+        },
+        "mono": {
+          "id": "jetbrains-mono",
+          "family": "JetBrains Mono",
+          "variable": true
+        }
+      },
+      "radius": {
+        "sm": "2px",
+        "md": "4px",
+        "lg": "6px"
+      },
+      "shadow": "none",
+      "motion": "technical",
+      "light": {
+        "bg": "oklch(0.97 0.005 150)",
+        "surface": "oklch(0.94 0.008 150)",
+        "text": "oklch(0.2 0.02 150)",
+        "muted": "oklch(0.45 0.02 150)",
+        "border": "oklch(0.85 0.01 150)",
+        "accent": "oklch(0.5 0.13 150)",
+        "onAccent": "oklch(0.99 0 0)"
+      },
+      "dark": {
+        "bg": "oklch(0.14 0.01 160)",
+        "surface": "oklch(0.18 0.012 160)",
+        "text": "oklch(0.93 0.03 150)",
+        "muted": "oklch(0.74 0.03 150)",
+        "border": "oklch(0.3 0.02 160)",
+        "accent": "oklch(0.82 0.16 150)",
+        "onAccent": "oklch(0.14 0.01 160)"
+      },
+      "patterns": [
+        "typewriter",
+        "scroll-progress"
+      ],
+      "avoid": "green-on-black only; gimmick typing that delays content"
+    },
+    {
+      "id": "organic-earth",
+      "name": "Organic Earth",
+      "style": "Organic / Natural",
+      "mood": [
+        "grounded",
+        "warm",
+        "honest"
+      ],
+      "bestFor": [
+        "wellness",
+        "food",
+        "sustainability",
+        "craft",
+        "skincare",
+        "outdoor",
+        "farm"
+      ],
+      "dials": {
+        "variance": 6,
+        "motion": 4,
+        "density": 3
+      },
+      "fonts": {
+        "display": {
+          "id": "fraunces",
+          "family": "Fraunces",
+          "variable": true
+        },
+        "body": {
+          "id": "figtree",
+          "family": "Figtree",
+          "variable": true
+        }
+      },
+      "radius": {
+        "sm": "8px",
+        "md": "14px",
+        "lg": "28px"
+      },
+      "shadow": "soft",
+      "motion": "calm",
+      "light": {
+        "bg": "oklch(0.965 0.015 95)",
+        "surface": "oklch(0.985 0.01 95)",
+        "text": "oklch(0.25 0.03 140)",
+        "muted": "oklch(0.45 0.03 120)",
+        "border": "oklch(0.86 0.02 95)",
+        "accent": "oklch(0.48 0.1 145)",
+        "onAccent": "oklch(0.98 0.005 95)",
+        "accent2": "oklch(0.6 0.1 50)"
+      },
+      "dark": {
+        "bg": "oklch(0.2 0.02 140)",
+        "surface": "oklch(0.25 0.025 140)",
+        "text": "oklch(0.94 0.015 95)",
+        "muted": "oklch(0.74 0.02 95)",
+        "border": "oklch(0.36 0.025 140)",
+        "accent": "oklch(0.74 0.1 140)",
+        "onAccent": "oklch(0.2 0.02 140)"
+      },
+      "patterns": [
+        "scroll-reveal",
+        "realistic-shadows"
+      ],
+      "avoid": "beige-everything; cream + terracotta + serif as an unexamined default"
+    },
+    {
+      "id": "luxury-noir",
+      "name": "Luxury Noir",
+      "style": "Luxury / Refined",
+      "mood": [
+        "restrained",
+        "exclusive",
+        "elegant"
+      ],
+      "bestFor": [
+        "fashion",
+        "jewelry",
+        "hotel",
+        "real-estate",
+        "fine-dining",
+        "automotive"
+      ],
+      "dials": {
+        "variance": 6,
+        "motion": 4,
+        "density": 2
+      },
+      "fonts": {
+        "display": {
+          "id": "bodoni-moda",
+          "family": "Bodoni Moda",
+          "variable": true
+        },
+        "body": {
+          "id": "jost",
+          "family": "Jost",
+          "variable": true
+        }
+      },
+      "radius": {
+        "sm": "0px",
+        "md": "0px",
+        "lg": "2px"
+      },
+      "shadow": "none",
+      "motion": "luxury",
+      "light": {
+        "bg": "oklch(0.97 0.006 85)",
+        "surface": "oklch(0.99 0.004 85)",
+        "text": "oklch(0.16 0.005 85)",
+        "muted": "oklch(0.44 0.008 85)",
+        "border": "oklch(0.84 0.01 85)",
+        "accent": "oklch(0.45 0.06 60)",
+        "onAccent": "oklch(0.98 0.004 85)"
+      },
+      "dark": {
+        "bg": "oklch(0.13 0.004 85)",
+        "surface": "oklch(0.18 0.005 85)",
+        "text": "oklch(0.95 0.008 85)",
+        "muted": "oklch(0.72 0.01 85)",
+        "border": "oklch(0.3 0.008 85)",
+        "accent": "oklch(0.76 0.07 75)",
+        "onAccent": "oklch(0.13 0.004 85)"
+      },
+      "patterns": [
+        "scroll-video",
+        "scroll-reveal"
+      ],
+      "avoid": "gold gradients and script fonts; tiny low-contrast text"
+    },
+    {
+      "id": "playful-toy",
+      "name": "Playful Toy",
+      "style": "Playful / Toy",
+      "mood": [
+        "cheerful",
+        "bouncy",
+        "approachable"
+      ],
+      "bestFor": [
+        "consumer-app",
+        "kids",
+        "game",
+        "community",
+        "pet",
+        "hobby"
+      ],
+      "dials": {
+        "variance": 7,
+        "motion": 7,
+        "density": 4
+      },
+      "fonts": {
+        "display": {
+          "id": "gabarito",
+          "family": "Gabarito",
+          "variable": true
+        },
+        "body": {
+          "id": "nunito",
+          "family": "Nunito",
+          "variable": true
+        }
+      },
+      "radius": {
+        "sm": "10px",
+        "md": "18px",
+        "lg": "28px"
+      },
+      "shadow": "hard",
+      "motion": "playful",
+      "light": {
+        "bg": "oklch(0.98 0.015 230)",
+        "surface": "oklch(1 0 0)",
+        "text": "oklch(0.24 0.04 270)",
+        "muted": "oklch(0.46 0.04 270)",
+        "border": "oklch(0.88 0.03 240)",
+        "accent": "oklch(0.55 0.2 30)",
+        "onAccent": "oklch(0.99 0 0)",
+        "accent2": "oklch(0.7 0.14 220)"
+      },
+      "dark": {
+        "bg": "oklch(0.2 0.05 270)",
+        "surface": "oklch(0.27 0.055 270)",
+        "text": "oklch(0.97 0.01 230)",
+        "muted": "oklch(0.78 0.03 230)",
+        "border": "oklch(0.4 0.05 270)",
+        "accent": "oklch(0.74 0.16 35)",
+        "onAccent": "oklch(0.2 0.05 270)"
+      },
+      "patterns": [
+        "magnetic-button",
+        "toast",
+        "number-ticker"
+      ],
+      "avoid": "playful ≠ messy — keep a strict spacing system"
+    },
+    {
+      "id": "kinetic-type",
+      "name": "Kinetic Type",
+      "style": "Kinetic Typography",
+      "mood": [
+        "energetic",
+        "graphic",
+        "statement"
+      ],
+      "bestFor": [
+        "agency",
+        "event",
+        "launch",
+        "portfolio",
+        "campaign",
+        "conference"
+      ],
+      "dials": {
+        "variance": 8,
+        "motion": 8,
+        "density": 3
+      },
+      "fonts": {
+        "display": {
+          "id": "bricolage-grotesque",
+          "family": "Bricolage Grotesque",
+          "variable": true
+        },
+        "body": {
+          "id": "inter-tight",
+          "family": "Inter Tight",
+          "variable": true
+        }
+      },
+      "radius": {
+        "sm": "0px",
+        "md": "6px",
+        "lg": "12px"
+      },
+      "shadow": "none",
+      "motion": "cinematic",
+      "light": {
+        "bg": "oklch(0.97 0 0)",
+        "surface": "oklch(0.93 0 0)",
+        "text": "oklch(0.14 0 0)",
+        "muted": "oklch(0.42 0 0)",
+        "border": "oklch(0.14 0 0)",
+        "accent": "oklch(0.64 0.21 40)",
+        "onAccent": "oklch(0.14 0 0)"
+      },
+      "dark": {
+        "bg": "oklch(0.12 0 0)",
+        "surface": "oklch(0.18 0 0)",
+        "text": "oklch(0.97 0 0)",
+        "muted": "oklch(0.75 0 0)",
+        "border": "oklch(0.97 0 0)",
+        "accent": "oklch(0.7 0.2 40)",
+        "onAccent": "oklch(0.12 0 0)"
+      },
+      "patterns": [
+        "marquee",
+        "scroll-reveal",
+        "typewriter",
+        "custom-cursor"
+      ],
+      "avoid": "content hidden until the animation finishes"
+    },
+    {
+      "id": "data-dense",
+      "name": "Data Dense",
+      "style": "Data-Dense / Pro Tool",
+      "mood": [
+        "efficient",
+        "clear",
+        "calm"
+      ],
+      "bestFor": [
+        "dashboard",
+        "admin",
+        "analytics",
+        "crm",
+        "trading",
+        "internal-tool"
+      ],
+      "dials": {
+        "variance": 2,
+        "motion": 2,
+        "density": 8
+      },
+      "fonts": {
+        "display": {
+          "id": "ibm-plex-sans",
+          "family": "IBM Plex Sans",
+          "variable": true
+        },
+        "body": {
+          "id": "ibm-plex-sans",
+          "family": "IBM Plex Sans",
+          "variable": true
+        },
+        "mono": {
+          "id": "ibm-plex-mono",
+          "family": "IBM Plex Mono",
+          "variable": false
+        }
+      },
+      "radius": {
+        "sm": "4px",
+        "md": "6px",
+        "lg": "8px"
+      },
+      "shadow": "soft",
+      "motion": "technical",
+      "light": {
+        "bg": "oklch(0.99 0.002 250)",
+        "surface": "oklch(0.965 0.004 250)",
+        "text": "oklch(0.23 0.015 255)",
+        "muted": "oklch(0.48 0.015 255)",
+        "border": "oklch(0.9 0.006 250)",
+        "accent": "oklch(0.5 0.15 255)",
+        "onAccent": "oklch(0.99 0 0)"
+      },
+      "dark": {
+        "bg": "oklch(0.17 0.008 255)",
+        "surface": "oklch(0.21 0.01 255)",
+        "text": "oklch(0.93 0.006 255)",
+        "muted": "oklch(0.72 0.01 255)",
+        "border": "oklch(0.3 0.01 255)",
+        "accent": "oklch(0.72 0.13 250)",
+        "onAccent": "oklch(0.17 0.008 255)"
+      },
+      "patterns": [
+        "skeleton",
+        "toast",
+        "progress",
+        "animated-tabs"
+      ],
+      "avoid": "decorative gradients; color-only status; charts without units"
+    },
+    {
+      "id": "m3-expressive",
+      "name": "Material Expressive",
+      "style": "Material 3 Expressive",
+      "mood": [
+        "vivid",
+        "springy",
+        "friendly"
+      ],
+      "bestFor": [
+        "android-app",
+        "consumer-app",
+        "productivity",
+        "media-app"
+      ],
+      "dials": {
+        "variance": 5,
+        "motion": 6,
+        "density": 5
+      },
+      "fonts": {
+        "display": {
+          "id": "roboto-flex",
+          "family": "Roboto Flex",
+          "variable": true
+        },
+        "body": {
+          "id": "roboto-flex",
+          "family": "Roboto Flex",
+          "variable": true
+        }
+      },
+      "radius": {
+        "sm": "12px",
+        "md": "20px",
+        "lg": "28px"
+      },
+      "shadow": "soft",
+      "motion": "playful",
+      "light": {
+        "bg": "oklch(0.98 0.01 175)",
+        "surface": "oklch(0.95 0.02 175)",
+        "text": "oklch(0.22 0.02 175)",
+        "muted": "oklch(0.45 0.03 175)",
+        "border": "oklch(0.82 0.03 175)",
+        "accent": "oklch(0.48 0.11 175)",
+        "onAccent": "oklch(0.99 0 0)"
+      },
+      "dark": {
+        "bg": "oklch(0.17 0.015 175)",
+        "surface": "oklch(0.23 0.02 175)",
+        "text": "oklch(0.94 0.01 175)",
+        "muted": "oklch(0.76 0.02 175)",
+        "border": "oklch(0.4 0.03 175)",
+        "accent": "oklch(0.8 0.11 175)",
+        "onAccent": "oklch(0.2 0.03 175)"
+      },
+      "patterns": [
+        "animated-tabs",
+        "toast",
+        "magnetic-button"
+      ],
+      "avoid": "every expressive shape at once; springs on large layout moves"
+    },
+    {
+      "id": "corporate-trust",
+      "name": "Corporate Trust",
+      "style": "Swiss + Editorial (trust)",
+      "mood": [
+        "trustworthy",
+        "stable",
+        "clear"
+      ],
+      "bestFor": [
+        "bank",
+        "insurance",
+        "healthcare",
+        "legal",
+        "enterprise",
+        "government-contractor",
+        "consulting"
+      ],
+      "dials": {
+        "variance": 3,
+        "motion": 2,
+        "density": 5
+      },
+      "fonts": {
+        "display": {
+          "id": "source-serif-4",
+          "family": "Source Serif 4",
+          "variable": true
+        },
+        "body": {
+          "id": "source-sans-3",
+          "family": "Source Sans 3",
+          "variable": true
+        }
+      },
+      "radius": {
+        "sm": "4px",
+        "md": "6px",
+        "lg": "10px"
+      },
+      "shadow": "soft",
+      "motion": "calm",
+      "light": {
+        "bg": "oklch(0.99 0.003 240)",
+        "surface": "oklch(0.965 0.006 240)",
+        "text": "oklch(0.22 0.03 255)",
+        "muted": "oklch(0.47 0.025 255)",
+        "border": "oklch(0.89 0.01 245)",
+        "accent": "oklch(0.42 0.11 255)",
+        "onAccent": "oklch(0.99 0 0)",
+        "accent2": "oklch(0.55 0.1 185)"
+      },
+      "dark": {
+        "bg": "oklch(0.17 0.02 255)",
+        "surface": "oklch(0.22 0.025 255)",
+        "text": "oklch(0.95 0.008 245)",
+        "muted": "oklch(0.74 0.02 245)",
+        "border": "oklch(0.33 0.03 255)",
+        "accent": "oklch(0.74 0.1 245)",
+        "onAccent": "oklch(0.17 0.02 255)"
+      },
+      "patterns": [
+        "progress",
+        "toast",
+        "skeleton"
+      ],
+      "avoid": "stock photos of handshakes; jargon; tiny legal text"
+    },
+    {
+      "id": "warm-hospitality",
+      "name": "Warm Hospitality",
+      "style": "Organic + Editorial (hospitality)",
+      "mood": [
+        "inviting",
+        "appetizing",
+        "local"
+      ],
+      "bestFor": [
+        "restaurant",
+        "cafe",
+        "bakery",
+        "hotel",
+        "travel",
+        "winery",
+        "local-business"
+      ],
+      "dials": {
+        "variance": 6,
+        "motion": 4,
+        "density": 3
+      },
+      "fonts": {
+        "display": {
+          "id": "young-serif",
+          "family": "Young Serif",
+          "variable": false
+        },
+        "body": {
+          "id": "dm-sans",
+          "family": "DM Sans",
+          "variable": true
+        }
+      },
+      "radius": {
+        "sm": "6px",
+        "md": "12px",
+        "lg": "20px"
+      },
+      "shadow": "soft",
+      "motion": "calm",
+      "light": {
+        "bg": "oklch(0.965 0.02 75)",
+        "surface": "oklch(0.985 0.012 75)",
+        "text": "oklch(0.24 0.03 40)",
+        "muted": "oklch(0.45 0.04 45)",
+        "border": "oklch(0.86 0.025 70)",
+        "accent": "oklch(0.5 0.14 35)",
+        "onAccent": "oklch(0.99 0 0)",
+        "accent2": "oklch(0.55 0.08 120)"
+      },
+      "dark": {
+        "bg": "oklch(0.19 0.02 40)",
+        "surface": "oklch(0.24 0.025 40)",
+        "text": "oklch(0.95 0.015 75)",
+        "muted": "oklch(0.75 0.02 70)",
+        "border": "oklch(0.36 0.03 40)",
+        "accent": "oklch(0.72 0.13 40)",
+        "onAccent": "oklch(0.19 0.02 40)"
+      },
+      "patterns": [
+        "scroll-reveal",
+        "realistic-shadows",
+        "toast"
+      ],
+      "avoid": "PDF menus; hiding hours, address and booking below the fold"
+    },
+    {
+      "id": "civic-clear",
+      "name": "Civic Clear",
+      "style": "Accessible-first (public services)",
+      "mood": [
+        "plain",
+        "inclusive",
+        "dependable"
+      ],
+      "bestFor": [
+        "government",
+        "nonprofit",
+        "education",
+        "healthcare",
+        "library",
+        "public-service"
+      ],
+      "dials": {
+        "variance": 2,
+        "motion": 1,
+        "density": 5
+      },
+      "fonts": {
+        "display": {
+          "id": "atkinson-hyperlegible-next",
+          "family": "Atkinson Hyperlegible Next",
+          "variable": true
+        },
+        "body": {
+          "id": "atkinson-hyperlegible-next",
+          "family": "Atkinson Hyperlegible Next",
+          "variable": true
+        }
+      },
+      "radius": {
+        "sm": "2px",
+        "md": "4px",
+        "lg": "6px"
+      },
+      "shadow": "none",
+      "motion": "calm",
+      "light": {
+        "bg": "oklch(1 0 0)",
+        "surface": "oklch(0.97 0.003 250)",
+        "text": "oklch(0.2 0.01 250)",
+        "muted": "oklch(0.42 0.01 250)",
+        "border": "oklch(0.55 0.01 250)",
+        "accent": "oklch(0.45 0.15 255)",
+        "onAccent": "oklch(1 0 0)"
+      },
+      "dark": {
+        "bg": "oklch(0.15 0.01 250)",
+        "surface": "oklch(0.2 0.012 250)",
+        "text": "oklch(0.97 0 0)",
+        "muted": "oklch(0.8 0.01 250)",
+        "border": "oklch(0.65 0.01 250)",
+        "accent": "oklch(0.78 0.12 250)",
+        "onAccent": "oklch(0.15 0.01 250)"
+      },
+      "patterns": [
+        "progress",
+        "skeleton",
+        "toast"
+      ],
+      "avoid": "decorative motion; low-contrast borders on inputs; jargon (aim for plain language)"
+    },
+    {
+      "id": "ecommerce-crisp",
+      "name": "Commerce Crisp",
+      "style": "Minimal commerce",
+      "mood": [
+        "clean",
+        "product-first",
+        "fast"
+      ],
+      "bestFor": [
+        "ecommerce",
+        "d2c",
+        "fashion-retail",
+        "marketplace",
+        "product-page"
+      ],
+      "dials": {
+        "variance": 4,
+        "motion": 4,
+        "density": 6
+      },
+      "fonts": {
+        "display": {
+          "id": "urbanist",
+          "family": "Urbanist",
+          "variable": true
+        },
+        "body": {
+          "id": "manrope",
+          "family": "Manrope",
+          "variable": true
+        }
+      },
+      "radius": {
+        "sm": "4px",
+        "md": "8px",
+        "lg": "12px"
+      },
+      "shadow": "soft",
+      "motion": "snappy",
+      "light": {
+        "bg": "oklch(1 0 0)",
+        "surface": "oklch(0.97 0.003 30)",
+        "text": "oklch(0.19 0.01 30)",
+        "muted": "oklch(0.46 0.012 30)",
+        "border": "oklch(0.9 0.005 30)",
+        "accent": "oklch(0.19 0.01 30)",
+        "onAccent": "oklch(0.99 0 0)",
+        "accent2": "oklch(0.52 0.19 25)"
+      },
+      "dark": {
+        "bg": "oklch(0.15 0.005 30)",
+        "surface": "oklch(0.2 0.006 30)",
+        "text": "oklch(0.97 0.003 30)",
+        "muted": "oklch(0.73 0.008 30)",
+        "border": "oklch(0.3 0.006 30)",
+        "accent": "oklch(0.97 0.003 30)",
+        "onAccent": "oklch(0.15 0.005 30)"
+      },
+      "patterns": [
+        "skeleton",
+        "toast",
+        "custom-scrollbar",
+        "progress"
+      ],
+      "avoid": "carousels as the only way to see products; fake urgency timers"
+    }
+  ]
+}

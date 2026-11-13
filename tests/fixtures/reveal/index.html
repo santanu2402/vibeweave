@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reveal fixture — one reveal never fires</title>
+<style>
+  body { margin: 0; font: 18px/1.5 system-ui, sans-serif; color: #111; background: #fff; }
+  section { min-height: 120vh; padding: 2rem; }
+  footer { padding: 1rem 2rem; }
+  .r { opacity: 0; transform: translateY(20px); transition: opacity 0.3s, transform 0.3s; }
+  .r.in { opacity: 1; transform: none; }
+  .tip { opacity: 0; }
+</style>
+</head>
+<body>
+<main>
+  <section>
+    <h1>Reveal fixture</h1>
+    <p class="r" id="good">This paragraph reveals once it scrolls into view.</p>
+    <button type="button">Help <span class="tip" role="tooltip">A tooltip is hidden on purpose</span></button>
+  </section>
+  <section><h2>More content</h2><p>Plain text that is always visible.</p></section>
+</main>
+<footer>
+  <!-- Planted bug: the observer's -20% bottom margin means this last row can never intersect, so it never shows. -->
+  <p class="r" id="never">© 2026 — this last row sits in the bottom fifth of the screen at full scroll.</p>
+</footer>
+<script>
+  const io = new IntersectionObserver((entries) => entries.forEach((e) => {
+    if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+  }), { rootMargin: "0px 0px -20% 0px" });
+  document.querySelectorAll(".r").forEach((el) => io.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "name": "vibeweave",
+  "version": "2.0.0",
+  "description": "Vibeweave — the AI frontend crew for every IDE: clarifies, plans, designs, builds, animates, tests, optimizes and fixes web UIs, then proves it in a real browser. Agent Skills and 14 subagents with native setup for Claude Code, Cursor, Copilot, Codex, Gemini CLI, Antigravity, Windsurf, Kiro, Cline, Junie, OpenCode and more.",
+  "type": "module",
+  "bin": { "vibeweave": "bin/vibeweave.mjs" },
+  "files": ["bin/", "skills/", "agents/", "hooks/", "adapters/", "mcp/", "examples/", "README.md", "SECURITY.md", "LICENSE"],
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "validate": "node tools/validate.mjs",
+    "sync": "node tools/sync-shared.mjs",
+    "presets:check": "node skills/frontend-forge/scripts/preset.mjs check",
+    "test": "node tools/selftest.mjs"
+  },
+  "keywords": [
+    "agent-skills", "claude-code", "claude-skills", "skill-md", "cursor", "github-copilot", "codex", "gemini-cli",
+    "antigravity", "kiro", "vibe-coding", "frontend", "ui-design", "ux-design", "design-system", "tailwindcss", "shadcn-ui",
+    "react", "animation", "accessibility", "playwright", "ai-agents"
+  ],
+  "homepage": "https://vibeweave-glance.netlify.app/",
+  "repository": { "type": "git", "url": "git+https://github.com/santanu2402/vibeweave.git" },
+  "bugs": { "url": "https://github.com/santanu2402/vibeweave/issues/new/choose", "email": "itsantanu24@gmail.com" },
+  "license": "MIT",
+  "author": "Santanu Mandal <itsantanu24@gmail.com> (https://github.com/santanu2402)"
+}

@@ -1,0 +1,8 @@
+/* A token file that should read as original next to the bundled presets. */
+:root {
+  --font-display: "Recoleta Alt", ui-serif, serif;
+  --font-body: "Overpass Mono Text", ui-monospace, monospace;
+  --color-bg: oklch(0.93 0.05 95);
+  --color-accent: oklch(0.52 0.21 145);
+  --radius-md: 23px;
+}

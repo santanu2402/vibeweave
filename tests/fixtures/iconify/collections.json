@@ -1,0 +1,4 @@
+{
+  "tst": { "name": "Fixture Line", "total": 4, "height": 24, "category": "General", "author": { "name": "Fixture Author", "url": "https://example.com/fixture" }, "license": { "title": "MIT", "spdx": "MIT" } },
+  "cct": { "name": "Fixture Attribution", "total": 1, "height": 16, "category": "Logos", "author": { "name": "Fixture Author" }, "license": { "title": "CC BY 4.0", "spdx": "CC-BY-4.0" } }
+}

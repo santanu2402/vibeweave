@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Keyboard fixture: focus trap</title>
+<link rel="icon" href="data:,">
+<style>body{margin:0;font:16px/1.5 system-ui,sans-serif;color:#1f2937;background:#fff}main{padding:16px}a,button{display:inline-block;margin:6px;padding:10px 14px}:focus-visible{outline:3px solid #0f5f68;outline-offset:2px}</style>
+</head>
+<body>
+<main><h1>Focus trap</h1><p><a href="#v0">Link 0</a><a href="#v1">Link 1</a><a href="#v2">Link 2</a><a href="#v3">Link 3</a><a href="#v4">Link 4</a><a href="#v5">Link 5</a><a href="#v6">Link 6</a><a href="#v7">Link 7</a></p>
+<!-- planted: once focus enters the box, Tab only cycles between its two buttons (WCAG 2.1.2) -->
+<div id="box"><button type="button" id="t1">First</button><button type="button" id="t2">Second</button></div></main>
+<script>
+  const t1 = document.getElementById("t1"), t2 = document.getElementById("t2");
+  addEventListener("keydown", (e) => { if (e.key !== "Tab") return; e.preventDefault(); const a = document.activeElement; (a === t1 ? t2 : t1).focus(); });
+</script>
+</body>
+</html>
